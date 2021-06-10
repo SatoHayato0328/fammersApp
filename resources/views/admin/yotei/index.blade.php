@@ -10,8 +10,10 @@
             <div class="col-md-8">
                 <form action="{{ action('Admin\YoteiController@index') }}" method="get">
                     <div class="form-group row">
+                        <label for="request-month">月選択</label>
+                            <input type="month" name="request_month" id="request-month">
                         <label class="col-md-2">農作物</label>
-                        <div class="col-md-8">
+                        <div class="col-md-4">
                             <input type="text" class="form-control" name="cond_crop" value="{{ $cond_crop }}">
                         </div>
                         <div class="col-md-2">

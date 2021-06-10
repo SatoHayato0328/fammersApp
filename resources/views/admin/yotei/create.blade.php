@@ -22,7 +22,7 @@
                             <select class="form-control" id="crop" name="crop">
                                 <option value="cherry">さくらんぼ</option>
                                 <option value="shinemuscat">シャインマスカット</option>
-                                <option value="per">梨</option>
+                                <option value="pear">梨</option>
                                 <option value="asparagus">アスパラガス</option>
                     　　　　</select>    
                         </div>
