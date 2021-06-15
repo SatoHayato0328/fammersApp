@@ -19,6 +19,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('yotei/create', 'Admin\YoteiController@add');
     Route::post('yotei/create', 'Admin\YoteiController@create');
     Route::get('yotei', 'Admin\YoteiController@index');
+    Route::get('yotei/edit', 'Admin\YoteiController@edit');
+    Route::post('yotei/edit', 'Admin\YoteiController@update');
+    Route::get('yotei/delete', 'Admin\YoteiController@delete');
 });
 
 Auth::routes();

@@ -1,12 +1,12 @@
 @extends('layouts.admin')
 
-@section('title', '予定登録')
+@section('title', '予定編集')
 
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2>予定登録</h2>
+                <h2>予定編集</h2>
                 <form action="{{ action('Admin\YoteiController@create') }}" method="post" enctype="multipart/form-data">
 
                     @if (count($errors) > 0)
@@ -57,9 +57,12 @@
                             <textarea class="form-control" name="material" row="10">{{ old('material') }}</textarea>
                         </div>
                     </div>
-                    {{ csrf_field() }}
-                    <div class="text-right">
-                    <input type="submit" class="btn btn-primary btn-lg" value="登録">
+                    <div class="form-group row">
+                        <div class="col-md-10">
+                            <input type="hidden" name="id" value="{{ $yotei_form->id }}">
+                            {{ csrf_field() }}
+                            <input type="submit" class="btn btn-primary btn-lg" value="更新">
+                        </div>
                     </div>
                 </form>
             </div>

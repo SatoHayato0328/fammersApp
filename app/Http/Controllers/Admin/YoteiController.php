@@ -39,4 +39,32 @@ class YoteiController extends Controller
         }
         return view('admin.yotei.index', ['posts' => $posts, 'cond_crop' => $cond_crop]);
     }
+    
+    public function edit(Request $request)
+    {
+        $yotei = Yotei::find($request->id);
+        if (empty($yotei)) {
+            abort(404);
+        }
+        return view('admin.yotei.edit', ['yotei_form' => $yotei]);
+    }
+    
+    public function update(Request $request)
+    {
+        $this->validate($request, Yotei::$rules);
+        $yotei = Yotei::find($request->id);
+        $yotei_form = $request->all();
+        unset($yotei_form['_token']);
+        
+        $yotei->fill($yotei_form)->save();
+        
+        return redirect('admin/news');
+    }
+    
+    public function delete(Request $request)
+    {
+        $yotei = Yotei::find($request->id);
+        $yotei->delete();
+        return redirect('admin/yotei/');
+    }
 }
