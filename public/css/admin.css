@@ -3,7 +3,11 @@ body {
   background-position: center;
   background-color: #CEF9DC;
   color: #000;
-  font-family: "Mplus 1p", "sans-serif";
+  font-family: "Mplus 1p", "sans-serif", "M PLUS Rounded 1c";
+}
+
+.test {
+  font-family: "M+ Type-1 Regular";
 }
 
 .navbar-laravel {

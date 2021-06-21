@@ -31,6 +31,7 @@
                         <thead class="thead-dark">
                             <tr>
                                 <th width="10%">日付</th>
+                                <th width="10%">農作物</th>
                                 <th width="10%">作業時間</th>
                                 <th width="10%">作業人数</th>
                                 <th width="40%">作業内容</th>
@@ -42,11 +43,12 @@
                         <tbody>
                             @foreach($posts as $yotei)
                                 <tr>
-                                    <th>{{ $yotei->work_date }}</th>
-                                    <th>{{ $yotei->work_time }}</th>
-                                    <th>{{ $yotei->work_people }}</th>
-                                    <td>{{ $yotei->contens }}</td>
-                                    <td>{{ $yotei->material }}</td>
+                                    <th>{{ $yotei->yotei_date }}</th>
+                                    <th>{{ $yotei->crop }}</th>
+                                    <th>{{ $yotei->yotei_time }}</th>
+                                    <th>{{ $yotei->yotei_people }}</th>
+                                    <td>{{ $yotei->yotei_contents }}</td>
+                                    <td>{{ $yotei->yotei_material }}</td>
                                     <td>
                                         <div>
                                             <a href="{{ action('Admin\YoteiController@edit', ['id' => $yotei->id]) }}">編集</a>

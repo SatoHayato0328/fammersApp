@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Yotei;
+use App\History;
+use Carbon\Carbon;
 
 class YoteiController extends Controller
 {
@@ -57,6 +59,11 @@ class YoteiController extends Controller
         unset($yotei_form['_token']);
         
         $yotei->fill($yotei_form)->save();
+        
+        $history = new History;
+        $history->yotei_id = $yotei->id;
+        $history->edited_at = Carbon::now();
+        $history->save();
         
         return redirect('admin/news');
     }

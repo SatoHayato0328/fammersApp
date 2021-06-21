@@ -20,41 +20,41 @@
                         <label class="col-md-2">農作物</label>
                         <div class="col-md-4">
                             <select class="form-control" id="crop" name="crop">
-                                <option value="cherry">さくらんぼ</option>
-                                <option value="shinemuscat">シャインマスカット</option>
-                                <option value="pear">梨</option>
-                                <option value="asparagus">アスパラガス</option>
+                                <option>さくらんぼ</option>
+                                <option>シャインマスカット</option>
+                                <option>梨</option>
+                                <option>アスパラガス</option>
                     　　　　</select>    
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-10">日付</label>
                         <div class="col-md-4">
-                            <input type="text" class="form-control" name="work_date" value="{{ old('work_date') }}">
+                            <input type="text" class="form-control" name="yotei_date" value="{{ $yotei_form->yotei_date }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-10">作業時間</label>
                         <div class="col-md-4">
-                            <input type="text" class="form-control" name="work_time" value="{{ old('work_time') }}">
+                            <input type="text" class="form-control" name="yotei_time" value="{{ $yotei_form->yotei_time }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-10">作業人数</label>
                         <div class="col-md-4">
-                            <input type="text" class="form-control" name="work_people" value="{{ old('work_people') }}">
+                            <input type="text" class="form-control" name="yotei_people" value="{{ $yotei_form->yotei_people }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-4">作業内容</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="contents" rows="20">{{ old('contents') }}</textarea>
+                            <textarea class="form-control" name="yotei_contents" rows="20">{{ $yotei_form->yotei_contents }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-4">資材</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="material" row="10">{{ old('material') }}</textarea>
+                            <textarea class="form-control" name="yotei_material" row="10">{{ $yotei_form->yotei_material }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -65,6 +65,18 @@
                         </div>
                     </div>
                 </form>
+                <div class="row mt-5">
+                    <div class="col-md-4 mx-auto">
+                        <h2>編集履歴</h2>
+                        <ul class="list-group">
+                            @if ($yotei_form->histories != NULL)
+                                @foreach ($yotei_form->histories as $history)
+                                    <li class="list-group-item">{{ $history->edited_at }}</li>
+                                @endforeach
+                            @endif
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -16,12 +16,13 @@ class CreateYoteiTable extends Migration
         Schema::create('yoteis', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('crop');
-            $table->date('work_date');
-            $table->string('work_time');
-            $table->string('work_people');
-            $table->string('contents');
-            $table->string('material');
-            $table->timestamps();
+            $table->date('yotei_date');
+            $table->string('yotei_time');
+            $table->string('yotei_people');
+            $table->string('yotei_contents');
+            $table->string('yotei_material');
+            $table->timestamp('updated_at')->useCurrent()->nullable();
+            $table->timestamp('created_at')->useCurrent()->nullable();
         });
     }
 
