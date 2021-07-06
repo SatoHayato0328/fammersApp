@@ -11,6 +11,8 @@ class Yotei extends Model
     public static $rules = array(
         'crop' => 'required',
         'yotei_date' => 'required',
+        'yotei_time' => 'required|integer',
+        'yotei_people' => 'required|integer',
     );
     
     public function histories()
@@ -19,5 +21,9 @@ class Yotei extends Model
     }
     
     protected $fillable = ['crop', 'yotei_date', 'yotei_time', 'yotei_people', 'yotei_contents', 'yotei_material'];
+    
+    public function jissekis() {
+        return $this->hasOne('App\Jisseki');
+    }
 
 }

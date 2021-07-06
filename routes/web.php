@@ -17,11 +17,19 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('yotei/create', 'Admin\YoteiController@add');
-    Route::post('yotei/create', 'Admin\YoteiController@create');
-    Route::get('yotei', 'Admin\YoteiController@index');
+    Route::post('yotei/create', 'Admin\YoteiController@create')->name('yotei/create');
+    Route::get('yotei', 'Admin\YoteiController@index')->name('yotei');
     Route::get('yotei/edit', 'Admin\YoteiController@edit');
     Route::post('yotei/edit', 'Admin\YoteiController@update');
     Route::get('yotei/delete', 'Admin\YoteiController@delete');
+    
+    Route::get('jisseki/create', 'Admin\JissekiController@add');
+    Route::post('jisseki/create', 'Admin\JissekiController@create');
+    Route::get('jisseki', 'Admin\JissekiController@index')->name('jisseki');
+    Route::get('jisseki/show', 'Admin\JissekiController@show');
+    Route::get('jisseki/edit', 'Admin\JissekiController@edit');
+    Route::post('jisseki/edit', 'Admin\JissekiController@update');
+    Route::get('jisseki/delete', 'Admin\JissekiController@delete');
 });
 
 Auth::routes();

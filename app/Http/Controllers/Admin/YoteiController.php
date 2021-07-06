@@ -33,13 +33,21 @@ class YoteiController extends Controller
     
     public function index(Request $request)
     {
+        //dd($request->search_year_month);
+        $search_year_month = $request->search_year_month;
         $cond_crop = $request->cond_crop;
-        if ($cond_crop != '') {
-            $posts = Yotei::where('crop', $cond_crop)->get();
-        } else {
-            $posts = Yotei::all();
+        
+        $query = Yotei::query();
+        
+        if ($search_year_month != '') {
+            $query->where('yotei_date', 'like', "$search_year_month%");
         }
-        return view('admin.yotei.index', ['posts' => $posts, 'cond_crop' => $cond_crop]);
+        if ($cond_crop != '') {
+            $query->where('crop', $cond_crop);
+        }
+        $posts = $query->get();
+        
+        return view('admin.yotei.index', ['posts' => $posts, 'search_year_month' => $search_year_month, 'cond_crop' => $cond_crop]);
     }
     
     public function edit(Request $request)
@@ -65,7 +73,7 @@ class YoteiController extends Controller
         $history->edited_at = Carbon::now();
         $history->save();
         
-        return redirect('admin/news');
+        return redirect('admin/yotei');
     }
     
     public function delete(Request $request)

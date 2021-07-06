@@ -147,11 +147,11 @@ return [
 
     'attributes' => [
         'crop' => '農作物',
-        'date' => '日付',
-        'time' => '作業時間',
-        'people' => '作業人数',
-        'contents' => '作業内容',
-        'material' => '資材'
+        'yotei_date' => '日付',
+        'yotei_time' => '作業時間',
+        'yotei_people' => '作業人数',
+        'yotei_contents' => '作業内容',
+        'yotei_material' => '資材'
     ],
 
 ];

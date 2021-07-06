@@ -17,10 +17,10 @@ class CreateYoteiTable extends Migration
             $table->bigIncrements('id');
             $table->string('crop');
             $table->date('yotei_date');
-            $table->string('yotei_time');
-            $table->string('yotei_people');
-            $table->string('yotei_contents');
-            $table->string('yotei_material');
+            $table->string('yotei_time')->nullable();;
+            $table->string('yotei_people')->nullable();;
+            $table->text('yotei_contents')->nullable();;
+            $table->text('yotei_material')->nullable();;
             $table->timestamp('updated_at')->useCurrent()->nullable();
             $table->timestamp('created_at')->useCurrent()->nullable();
         });

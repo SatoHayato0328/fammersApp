@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>予定編集</h2>
-                <form action="{{ action('Admin\YoteiController@create') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ action('Admin\YoteiController@update') }}" method="post" enctype="multipart/form-data">
 
                     @if (count($errors) > 0)
                         <ul>
@@ -17,7 +17,7 @@
                         </ul>
                     @endif
                     <div class="form-group row">
-                        <label class="col-md-2">農作物</label>
+                        <label class="col-md-10">農作物</label>
                         <div class="col-md-4">
                             <select class="form-control" id="crop" name="crop">
                                 <option>さくらんぼ</option>
@@ -30,19 +30,19 @@
                     <div class="form-group row">
                         <label class="col-md-10">日付</label>
                         <div class="col-md-4">
-                            <input type="text" class="form-control" name="yotei_date" value="{{ $yotei_form->yotei_date }}">
+                            <input type="date" class="form-control" name="yotei_date" value="{{ $yotei_form->yotei_date }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-10">作業時間</label>
                         <div class="col-md-4">
-                            <input type="text" class="form-control" name="yotei_time" value="{{ $yotei_form->yotei_time }}">
+                            <input type="number" class="form-control" name="yotei_time" value="{{ $yotei_form->yotei_time }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-10">作業人数</label>
                         <div class="col-md-4">
-                            <input type="text" class="form-control" name="yotei_people" value="{{ $yotei_form->yotei_people }}">
+                            <input type="number" class="form-control" name="yotei_people" value="{{ $yotei_form->yotei_people }}">
                         </div>
                     </div>
                     <div class="form-group row">
