@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2>予定編集</h2>
+                <h2 class="font-weight-bold">実績編集</h2>
                 <form action="{{ action('Admin\JissekiController@update') }}" method="post" enctype="multipart/form-data">
 
                     @if (count($errors) > 0)
@@ -40,15 +40,15 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-10">天気</label>
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" name="jisseki_weather" value="{{ $jisseki_form->jisseki_weather }}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
                         <label class="col-md-10">作業人数</label>
                         <div class="col-md-4">
                             <input type="number" class="form-control" name="jisseki_people" value="{{ $jisseki_form->jisseki_people }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-10">天候</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="jisseki_weather" value="{{ $jisseki_form->jisseki_weather }}">
                         </div>
                     </div>
                     <div class="form-group row">

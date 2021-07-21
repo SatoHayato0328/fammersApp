@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Jisseki extends Model
 {
     protected $gurded = array('id');
+    
+    protected $dates = [
+        'jisseki_date'
+    ];
     //
     public static $rules = array(
         'crop' => 'required',
@@ -19,7 +23,8 @@ class Jisseki extends Model
     
     protected $fillable = ['crop', 'jisseki_date', 'jisseki_time', 'jisseki_people', 'jisseki_weather', 'jisseki_contents', 'jisseki_material', 'jisseki_suuryou', 'jisseki_syukkatanka', 'jisseki_coment'];
     
-     public function yoteis() {
-    return $this->belongsTo('App\Yotei');
+     public function yotei() 
+     {
+    return $this->belongsTo('App\Yotei', 'jisseki_id');
     }
 }

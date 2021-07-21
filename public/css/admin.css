@@ -1,3 +1,39 @@
+.button-area {
+  text-align: center;
+  padding: 200px;
+  vertical-align: middle;
+}
+
+.button-area .btn-primary {
+  margin-right: 20px;
+}
+
+.btn-home {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+  background-color: #FFF;
+}
+
+.btn--blue.btn--border-double {
+  border: 8px double #0090bb;
+}
+
 body {
   background-repeat: no-repeat;
   background-position: center;
@@ -8,6 +44,11 @@ body {
 
 .test {
   font-family: "M+ Type-1 Regular";
+}
+
+.text {
+  text-indent: 1em;
+  font-weight: bold;
 }
 
 .navbar-laravel {
@@ -38,6 +79,10 @@ body {
   color: #000;
 }
 
+.table-border {
+  border-bottom: solid 3px;
+}
+
 .list-group-item {
   border-color: #000;
   background-color: #fff;
@@ -58,5 +103,23 @@ body {
 label {
   font-size: large;
   font-weight: bold;
+}
+
+.font {
+  font-size: medium;
+}
+
+.image img {
+  width: 250px;
+}
+
+.left-column {
+  float: left;
+  width: 50%;
+}
+
+.rught-column {
+  float: right;
+  width: 50%;
 }
 

@@ -15,8 +15,8 @@ class CreateJissekiTable extends Migration
     {
         Schema::create('jissekis', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('crop');
-            $table->date('jisseki_date');
+            $table->string('crop')->nullable();
+            $table->date('jisseki_date')->nullable();
             $table->string('jisseki_time')->nullable();
             $table->string('jisseki_weather')->nullable();
             $table->string('jisseki_people')->nullable();
@@ -26,6 +26,7 @@ class CreateJissekiTable extends Migration
             $table->string('jisseki_syukkatanka')->nullable();
             $table->string('image_path')->nullable();
             $table->text('jisseki_coment')->nullable();
+            $table->string('yotei_id')->nullable();
             $table->timestamps();
         });
     }

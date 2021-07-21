@@ -59,7 +59,7 @@ class JissekiController extends Controller
             $query->where('crop', $cond_crop);
         }
         $posts = $query->get();
-        
+        //dd($posts);
         return view('admin.jisseki.index', ['posts' => $posts, 'search_year_month' => $search_year_month, 'cond_crop' => $cond_crop]);
     }
     
@@ -85,9 +85,9 @@ class JissekiController extends Controller
         $jisseki = Jisseki::find($request->id);
         
         $jisseki_form = $request->all();
-        if ($request->remove =='true') {
+        if ($request->remove == 'true') {
             $jisseki_form['image_path'] = null;
-        } else if ($request->file('image')) {
+        } elseif ($request->file('image')) {
             $path = $request->file('image')->store('public/image');
             $jisseki_form['image_path'] = basename($path);
         } else {
@@ -98,7 +98,10 @@ class JissekiController extends Controller
         unset($jisseki_form['remove']);
         unset($jisseki_form['_token']);
         
-        $jisseki->fill($jisseki_form)->save();
+        
+        $jisseki->fill($jisseki_form);
+        $jisseki->yotei_id= $jisseki['id'];
+        $jisseki->save();
         
         return redirect('admin/jisseki');
     }

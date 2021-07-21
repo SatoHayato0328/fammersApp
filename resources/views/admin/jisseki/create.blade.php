@@ -46,7 +46,7 @@
             </div>
             <div class="col-md-8 mx-auto">
                 <h2>実績登録</h2>
-                <form action="{{ action('Admin\JissekiController@create') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ action('Admin\JissekiController@update') }}" method="post" enctype="multipart/form-data">
                     
                     @if (count($errors) > 0)
                         <ul>
@@ -86,7 +86,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-10">天気</label>
+                        <label class="col-md-10">天候</label>
                         <div class="col-md-4">
                             <input type="text" class="form-control" name="jisseki_weather" value="{{ old('jisseki_weather') }}">
                         </div>

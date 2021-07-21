@@ -4,8 +4,9 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <h2>実績確認</h2>
+            <h2 class="font-weight-bold">実績確認</h2>
         </div>
+        <br />
         <div class="row">
             <div class="col-auto">
                 <form action="{{ action('Admin\JissekiController@index') }}" method="get">
@@ -39,7 +40,7 @@
                                 <th>日付</th>
                                 <th>農作物</th>
                                 <th>作業時間</th>
-                                <th>天気</th>
+                                <th>天候</th>
                                 <th>作業人数</th>
                                 <th>作業内容</th>
                                 <th>資材</th>
@@ -54,7 +55,7 @@
                         <tbody>
                             @foreach($posts as $jisseki)
                                 <tr>
-                                    <th>{{ $jisseki->jisseki_date }}</th>
+                                    <th>{{ $jisseki->jisseki_date->format('Y/m/d') }}</th>
                                     <th>{{ $jisseki->crop }}</th>
                                     <th>{{ $jisseki->jisseki_time }}</th>
                                     <th>{{ $jisseki->jisseki_people }}</th>
@@ -63,7 +64,7 @@
                                     <td>{{ $jisseki->jisseki_material }}</td>
                                     <th>{{ $jisseki->jisseki_suuryou }}</th>
                                     <th>{{ $jisseki->jisseki_syukkatanka }}</th>
-                                    <th>{{ $jisseki->jisseki_comet }}</th>
+                                    <th>{{ $jisseki->jisseki_coment }}</th>
                                     <td>
                                         <div>
                                             <a href="{{ action('Admin\JissekiController@show', ['id' => $jisseki->id]) }}">詳細</a>

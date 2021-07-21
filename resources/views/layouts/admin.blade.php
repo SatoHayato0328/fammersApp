@@ -33,19 +33,26 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mr-auto">
-                              <li class="nav-item">
+                              
+                        </ul>
+                        
+                        <!-- Right Side Of Navbar -->
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
                                  <a class="nav-link" href="{{ route('yotei/create') }}">予定登録</a>
         　　　　　　　　　　　　　　　　　　　</li>
         　　　　　　　　　　　　　　　　　　　<li class="nav-item">
                                  <a class="nav-link" href="{{ route('yotei') }}">予定確認</a>
                               </li>
-                              　　　　　　　　<li class="nav-item">
+                        　　　<li class="nav-item">
                                  <a class="nav-link" href="{{ route('jisseki') }}">実績確認</a>
                               </li>
-                        </ul>
-                        
-                        <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ml-auto">
+                              <li class="nav-item">
+                                 <a class="nav-link" href="{{ route('yoteijisseki') }}">予定実績分析</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="{{ route('top') }}">TOP</a>
+                              </li>
                         
                          <!-- Authentication Links -->
                         {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}

@@ -151,7 +151,16 @@ return [
         'yotei_time' => '作業時間',
         'yotei_people' => '作業人数',
         'yotei_contents' => '作業内容',
-        'yotei_material' => '資材'
+        'yotei_material' => '資材',
+        'jisseki_date' => '日付',
+        'jisseki_time' => '作業時間',
+        'jisseki_weather' => '天候',
+        'jisseki_contents' => '作業内容',
+        'jisseki_people' => '作業人数',
+        'jisseki_material' => '資材',
+        'jisseki_suuryou' => '数量',
+        'jisseki_syukkatanka' => '出荷単価',
+        'jisseki_coment' => 'コメント',
     ],
 
 ];

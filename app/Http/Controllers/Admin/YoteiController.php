@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Yotei;
+use App\Jisseki;
 use App\History;
 use Carbon\Carbon;
 
@@ -21,14 +22,21 @@ class YoteiController extends Controller
         $this->validate($request, Yotei::$rules);
         
         $yotei = new Yotei;
+        $jisseki = new Jisseki;
+        
         $form = $request->all();
         
         unset($form['_token']);
         
+        $jisseki->yotei_id = $yotei['id'];
+        $jisseki->save();
+        
         $yotei->fill($form);
+        $yotei->jisseki_id = $jisseki['id'];
         $yotei->save();
         
-        return redirect('admin/yotei/create');
+        
+        return redirect('admin/yotei');
     }
     
     public function index(Request $request)

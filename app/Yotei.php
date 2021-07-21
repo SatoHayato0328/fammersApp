@@ -22,8 +22,9 @@ class Yotei extends Model
     
     protected $fillable = ['crop', 'yotei_date', 'yotei_time', 'yotei_people', 'yotei_contents', 'yotei_material'];
     
-    public function jissekis() {
-        return $this->hasOne('App\Jisseki');
+    public function jisseki() 
+    {
+        return $this->hasOne('App\Jisseki', 'yotei_id')->withDefault();
     }
 
 }
