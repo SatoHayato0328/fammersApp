@@ -85,11 +85,14 @@ class JissekiController extends Controller
         $jisseki = Jisseki::find($request->id);
         
         $jisseki_form = $request->all();
+        //dd($jisseki_form);
         if ($request->remove == 'true') {
             $jisseki_form['image_path'] = null;
         } elseif ($request->file('image')) {
             $path = $request->file('image')->store('public/image');
+            
             $jisseki_form['image_path'] = basename($path);
+            //dd($jisseki_form['image_path']);
         } else {
             $jisseki_form['image_path'] = $jisseki->image_path;
         }
@@ -98,9 +101,10 @@ class JissekiController extends Controller
         unset($jisseki_form['remove']);
         unset($jisseki_form['_token']);
         
-        
+        //dd($jisseki_form);
         $jisseki->fill($jisseki_form);
-        $jisseki->yotei_id= $jisseki['id'];
+        $jisseki->image_path = $jisseki_form['image_path'];
+        $jisseki->yotei_id = $jisseki['id'];
         $jisseki->save();
         
         return redirect('admin/jisseki');

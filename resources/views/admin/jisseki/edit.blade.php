@@ -36,13 +36,13 @@
                     <div class="form-group row">
                         <label class="col-md-10">作業時間</label>
                         <div class="col-md-4">
-                            <input type="number" class="form-control" name="jisseki_time" value="{{ $jisseki_form->jisseki_time }}">
+                            <input type="number" class="form-control" name="jisseki_time" min="0" value="{{ $jisseki_form->jisseki_time }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-10">作業人数</label>
                         <div class="col-md-4">
-                            <input type="number" class="form-control" name="jisseki_people" value="{{ $jisseki_form->jisseki_people }}">
+                            <input type="number" class="form-control" name="jisseki_people" min="0" value="{{ $jisseki_form->jisseki_people }}">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -66,13 +66,13 @@
                     <div class="form-group row">
                         <label class="col-md-10">数量</label>
                         <div class="col-md-4">
-                            <input type="number" class="form-control" name="jisseki_suuryou" value="{{ $jisseki_form->jisseki_suuryou }}">
+                            <input type="number" class="form-control" name="jisseki_suuryou" min="0" value="{{ $jisseki_form->jisseki_suuryou }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-10">出荷単価</label>
                         <div class="col-md-4">
-                            <input type="number" class="form-control" name="jisseki_syukkatanka" value="{{ $jisseki_form->jisseki_syukkatanka }}">
+                            <input type="number" class="form-control" name="jisseki_syukkatanka" min="0" value="{{ $jisseki_form->jisseki_syukkatanka }}">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -99,7 +99,9 @@
                         <div class="col-md-10">
                             <input type="hidden" name="id" value="{{ $jisseki_form->id }}">
                             {{ csrf_field() }}
+                            <div class="text-right">
                             <input type="submit" class="btn btn-primary btn-lg" value="更新">
+                            </div>
                         </div>
                     </div>
                 </form>

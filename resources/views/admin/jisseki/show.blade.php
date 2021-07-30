@@ -16,63 +16,64 @@
                     @endif
                 <?php
                 //dd($jisseki);
-                ?>    
+                ?>  
+                <br />
                 <div class="form-group row">
-                        <label class="col-md-10">農作物</label>
+                        <label class="col-md-10" style="background-color: skyblue; border-radius: 10px">農作物</label>
                         <div class="text col-md-4">
                             {{ $jisseki->crop }}
                         </div>
                 </div>
                 <div class="form-group row">
-                        <label class="col-md-10">日付</label>
+                        <label class="col-md-10" style="background-color: skyblue; border-radius: 10px">日付</label>
                         <div class="text col-md-4">
-                            {{ $jisseki->jisseki_date->format('Y/m/d') }}
+                            {{ $jisseki->jisseki_date }}
                         </div>
                 </div>
                 <div class="form-group row">
-                        <label class="col-md-10">作業時間</label>
+                        <label class="col-md-10" style="background-color: skyblue; border-radius: 10px">作業時間</label>
                         <div class="text col-md-4">
-                            {{ $jisseki->jisseki_time }}
+                            {{ $jisseki->jisseki_time }} 時間
                         </div>    
                 </div>
                 <div class="form-group row">
-                        <label class="col-md-10">天候</label>
+                        <label class="col-md-10" style="background-color: skyblue; border-radius: 10px">作業人数</label>
+                        <div class="text col-md-4">
+                            {{ $jisseki->jisseki_people }} 人
+                        </div>    
+                </div>
+                <div class="form-group row">
+                        <label class="col-md-10" style="background-color: skyblue; border-radius: 10px">天候</label>
                         <div class="text col-md-4">
                             {{ $jisseki->jisseki_weather }}
                         </div>    
                 </div>
                 <div class="form-group row">
-                        <label class="col-md-10">作業人数</label>
-                        <div class="text col-md-4">
-                            {{ $jisseki->jisseki_people }}
-                        </div>    
-                </div>
-                <div class="form-group row">
-                        <label class="col-md-10">作業内容</label>
+                        <label class="col-md-10" style="background-color: skyblue; border-radius: 10px">作業内容</label>
                         <div class="text col-md-4">
                             {{ $jisseki->jisseki_contents }}
                         </div>    
                 </div>
                 <div class="form-group row">
-                        <label class="col-md-10">資材</label>
+                        <label class="col-md-10" style="background-color: skyblue; border-radius: 10px">資材</label>
                         <div class="text col-md-4">
                             {{ $jisseki->jisseki_material }}
                         </div>    
                 </div>
                 <div class="form-group row">
-                        <label class="col-md-10">数量</label>
+                        <label class="col-md-10" style="background-color: skyblue; border-radius: 10px">数量</label>
                         <div class="text col-md-4">
-                            {{ $jisseki->jisseki_suuryou }}
+                            {{ $jisseki->jisseki_suuryou }} kg
                         </div>    
                 </div>
                 <div class="form-group row">
-                        <label class="col-md-10">出荷単価</label>
+                        <label class="col-md-10" style="background-color: skyblue; border-radius: 10px">出荷単価</label>
                         <div class="text col-md-4">
-                            {{ $jisseki->jisseki_syukkatanka }}
+                            {{ $jisseki->jisseki_syukkatanka }} 円
                         </div>    
                 </div>
                 <div class="form-group row">
-                        <label class="col-md-10">画像</label>
+                        <label class="col-md-10" style="background-color: skyblue; border-radius: 10px">画像</label>
                         <div class="image col-md-4">
                             @if ($jisseki->image_path)
                             <img src="{{ asset('storage/image/' . $jisseki->image_path) }}">
@@ -80,7 +81,7 @@
                         </div>    
                 </div>
                 <div class="form-group row">
-                        <label class="col-md-10">コメント</label>
+                        <label class="col-md-10" style="background-color: skyblue; border-radius: 10px">コメント</label>
                         <div class="text col-md-4">
                             {{ $jisseki->jisseki_coment }}
                         </div>    

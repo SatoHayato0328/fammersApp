@@ -36,13 +36,13 @@
                     <div class="form-group row">
                         <label class="col-md-10">作業時間</label>
                         <div class="col-md-4">
-                            <input type="number" class="form-control" name="yotei_time" value="{{ old('yotei_time') }}">
+                            <input type="number" class="form-control" name="yotei_time" min="0" value="{{ old('yotei_time') }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-10">作業人数</label>
                         <div class="col-md-4">
-                            <input type="number" class="form-control" name="yotei_people" value="{{ old('yotei_people') }}">
+                            <input type="number" class="form-control" name="yotei_people" min="0" value="{{ old('yotei_people') }}">
                         </div>
                     </div>
                     <div class="form-group row">

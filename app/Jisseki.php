@@ -11,6 +11,10 @@ class Jisseki extends Model
     protected $dates = [
         'jisseki_date'
     ];
+    
+    protected $casts = [
+        'jisseki_date' => 'date_format:Y/m/d',
+    ];
     //
     public static $rules = array(
         'crop' => 'required',

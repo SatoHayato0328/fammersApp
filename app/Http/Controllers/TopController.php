@@ -23,8 +23,7 @@ class TopController extends Controller
         }
         
         //合計作業日数の計算
-        $days = $posts->count('id');
-        
+        $days = $posts->count('jisseki_date');
         
         //合計作業時間の計算
         $times = $posts->sum('jisseki_time');
@@ -40,7 +39,7 @@ class TopController extends Controller
         
         
         //さくらんぼ平均出荷単価
-        $cherry_prices = $posts->where('crop', 'さくらんぼ')->avg('jisseki_syukkatanka');
+        $cherry_prices = $posts->where('crop', 'さくらんぼ')->map(function($jisseki) { return $jisseki->jisseki_suuryou * $jisseki->jisseki_syukkatanka; })->sum();
         
         
         //シャインマスカットの合計出荷数量
@@ -48,7 +47,7 @@ class TopController extends Controller
         
         
         //シャインマスカット平均出荷単価
-        $shinemuscat_prices = $posts->where('crop', 'シャインマスカット')->avg('jisseki_syukkatanka');
+        $shinemuscat_prices = $posts->where('crop', 'シャインマスカット')->map(function($jisseki) { return $jisseki->jisseki_suuryou * $jisseki->jisseki_syukkatanka; })->sum();
         
         
         //梨の合計出荷数量
@@ -56,7 +55,7 @@ class TopController extends Controller
         
         
         //梨平均出荷単価
-        $pear_prices = $posts->where('crop', '梨')->avg('jisseki_syukkatanka');
+        $pear_prices = $posts->where('crop', '梨')->map(function($jisseki) { return $jisseki->jisseki_suuryou * $jisseki->jisseki_syukkatanka; })->sum();
         
         
         //アスパラガスの合計出荷数量
@@ -64,7 +63,7 @@ class TopController extends Controller
         
         
         //アスパラガス平均出荷単価
-        $asparagas_prices = $posts->where('crop', 'アスパラガス')->avg('jisseki_syukkatanka');
+        $asparagas_prices = $posts->where('crop', 'アスパラガス')->map(function($jisseki) { return $jisseki->jisseki_suuryou * $jisseki->jisseki_syukkatanka; })->sum();
 
         
         return view('top', ['search_year_month' => $search_year_month, 'posts' => $posts, 'days' => $days, 'times' => $times, 'prices' => $prices, 'total_suuryou' => $total_suuryou, 'cherry_suuryou' => $cherry_suuryou, 'cherry_prices' => $cherry_prices,

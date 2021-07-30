@@ -60,8 +60,10 @@
                     <div class="form-group row">
                         <div class="col-md-10">
                             <input type="hidden" name="id" value="{{ $yotei_form->id }}">
+                            <div class="text-right">
                             {{ csrf_field() }}
                             <input type="submit" class="btn btn-primary btn-lg" value="更新">
+                            </div>
                         </div>
                     </div>
                 </form>

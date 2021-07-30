@@ -55,7 +55,7 @@
                         <tbody>
                             @foreach($posts as $jisseki)
                                 <tr>
-                                    <th>{{ $jisseki->jisseki_date->format('Y/m/d') }}</th>
+                                    <th>{{ $jisseki->jisseki_date }}</th>
                                     <th>{{ $jisseki->crop }}</th>
                                     <th>{{ $jisseki->jisseki_time }}</th>
                                     <th>{{ $jisseki->jisseki_people }}</th>

@@ -6,13 +6,14 @@
         <div class="row">
             <h2 class="font-weight-bold">予定実績分析</h2>
         </div>
+        <br/>
         <div class="row">
             <div class="col-auto">
                 <form action="{{ action('Admin\AnalysisController@index') }}" method="get">
                     <div class="form-group row">
                         <label for="request-month mx-auto">月選択</label>
                             <input type="month" name="search_year_month" value="{{ $search_year_month }}">
-                        <label class="col-auto mx-auto">農作物</label>
+                        <label class="col-auto mx-auto">農作物（予定）</label>
                         <div class="col-auto">
                             <select class="form-control" id="crop" name="cond_crop" value="{{ $cond_crop }}">
                                 <option></option>
@@ -68,10 +69,10 @@
                                 @if ($yotei->jisseki != NULL)
                                 <tr class="table-border" @if($intCounter % 2 == 0) style="background-color:white" @endif>
                                     <th>実績</th>
-                                    <th>{{ $yotei->jisseki->jisseki_date->format('Y/m/d') }}</th>
+                                    <th>{{ $yotei->jisseki->jisseki_date }}</th>
                                     <th>{{ $yotei->jisseki->crop }}</th>
-                                    <th>{{ $yotei->jisseki->jisseki_time }}</th>
-                                    <th>{{ $yotei->jisseki->jisseki_people }}</th>
+                                    <th>{{ $yotei->jisseki->jisseki_time }} ({{ $yotei->jisseki->jisseki_time - $yotei->yotei_time }})</th>
+                                    <th>{{ $yotei->jisseki->jisseki_people }} ({{ $yotei->jisseki->jisseki_people - $yotei->yotei_people }})</th>
                                     <td>{{ $yotei->jisseki->jisseki_contents }}</td>
                                     <td>{{ $yotei->jisseki->jisseki_material }}</td>
                                 </tr>

@@ -115,12 +115,18 @@ label {
       }
 }
 
+
 .left-column {
   float: left;
   width: 50%;
+  text-align: center;
 }
 
-.rught-column {
+.right-column {
   float: right;
   width: 50%;
+  text-align: center;
+}
+h4 {
+  color: darkorange;
 }
